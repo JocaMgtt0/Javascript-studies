@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+        //deve ter seletor css pois ele espera receber qualquer coisa de css
+        // e nao necessariamente um id, class, etc.
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        /*
+        O querySelectorAll nao retorna um html parser, e sim uma lista
+        */
+
+        //seleciona todos os elementos por meio de um seletor
+        //percorre o Node lista que o querySelectorAll retorna
+        //e adiciona uma classe 'destaque' por meio do classList.add
+        const selecionar = seletor => 
+            document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+        
+        //seleciona todos os elementos por meio de um seletor
+        //percorre a lista que o queryselectorAll retorna
+        //e remove a classe relacionada
+        const descelecionar = seletor => 
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+        selecionar('div')
+        descelecionar('*')
+        selecionar('.terceiro.ultimo')
+
+        //o asterisco é 'global'
+        descelecionar('*')
+
+        //seleciona todos os que nao sao da classe primeiro
+        selecionar(':not(#primeiro)')
+        descelecionar('*')
+
+        //primeiro filho do primeiro elemento
+        selecionar(':nth-child(1)')
+        descelecionar('*')
+
+        selecionar('div:nth-of-type(1)')
+        descelecionar('*')
+
+        //selecionar a partir de um atributo
+        selecionar('[wb-attrib]')
+
+
+
+    </script>
+</body>
+</html>

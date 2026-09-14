@@ -8,7 +8,8 @@
 <body>
 
 
-    <form action="http://localhost:5500/usuarios" method="post"><br>
+    <form method="post"><br>
+        <input type="hidden" name="id" value="3">
         <input type="email" name="email"><br> 
         <input type="password" name="senha"><br>
         <textarea name="bio" cols="30" rows="10"></textarea>
@@ -25,7 +26,8 @@
             <option value="ba">Bahia</option>
             <option value="ce">Ceará</option>
         </select>
-        <button>Enviar</button>
+        <button formaction="http://localhost:5500/usuarios">Incluir</button>
+        <button formaction="http://localhost:5500/usuarios/3">alterar</button>
     </form>
 
 </body>

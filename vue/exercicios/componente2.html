@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+
+    <div id="app">  
+        <cont contador="contador"> </cont>
+    </div>
+
+    <script>
+        Vue.component('cont', {
+            data: function() {
+                return{
+                    contador: 0
+                }
+            },
+            methods: {
+                somaUm(){
+                    this.contador++
+                }
+            },
+            template:` 
+                <div>
+                    <p>{{contador}}</p>
+                    <button @click="somaUm">+1</button>
+                </div>
+            `
+        })
+
+        new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>

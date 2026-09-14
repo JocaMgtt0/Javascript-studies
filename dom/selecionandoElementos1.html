@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        //obtem um id
+        document.getElementById('primeiro').classList.add('destaque')
+
+        //pega todas as divs do arquivo html
+        const divs = document.getElementsByTagName('div')
+
+        //classList -> seleicona a clase que ta na div
+        //remove todas as classes de todas as divs
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        //posso fazer dessa forma tambem
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        //filtra a classe - retorna um HTML coleccions, voce precisa transformar em array depois
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque')
+        }
+
+
+    </script>
+</body>
+</html>
