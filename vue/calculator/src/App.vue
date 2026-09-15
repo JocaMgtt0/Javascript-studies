@@ -1,16 +1,59 @@
  <template>
-    <div class="app2">
-      <h1>Ola Vue!</h1>
+    <div id="app">
+      <h1>Calculadora</h1>
+      <AppCalculator />
+      
     </div>
 
  </template>
  
+
+
+
+
  <script>
+
+ import AppCalculator from './main/AppCalculator';
+
  export default {
- 
+    components: {AppCalculator}
  }
  </script>
  
+
+
+
+
+
+
+
  <style>
- 
+
+@font-face{
+    font-family: RobotoMono;
+    src: url("./fonts/RobotoMono-Thin.ttf")
+}
+
+*{
+  font-family: "RobotoMono", monospace;
+}
+
+body {
+  margin: 0;
+}
+
+#app{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  color:#fff;
+  background: linear-gradient(to right, rgb(83,105, 118), rgb(41,46,73));
+
+}
+
+
  </style>
