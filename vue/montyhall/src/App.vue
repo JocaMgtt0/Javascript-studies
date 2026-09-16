@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h1>Problema Monty Hall</h1>
-        <AppDoor number="1" hasGift="false" />
+        <AppDoor number="1" :hasGift="false" />
     </div>
 
 </template>
@@ -17,12 +17,10 @@ export default {
 
 <style>
 
-* {
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
 
 body{
+    box-sizing: border-box;
+    font-family: sans-serif;    
     background: linear-gradient(to right, rgb(21,153, 87), rgb(21, 87, 153));
 }
 

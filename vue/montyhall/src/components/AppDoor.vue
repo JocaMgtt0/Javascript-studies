@@ -2,7 +2,7 @@
     
     <div class="door-area">
         <div class="door-frame">
-            <AppGif />
+            <AppGif v-if="open && hasGift" />
         </div>
         <div class="door">
             <div class="number">{{ number }}</div>
@@ -34,5 +34,57 @@ export default {
 
 
 <style>
+
+:root {
+    --door-border: 5px solid brown;
+}
+
+.door-area{
+    position: relative;
+    width: 240px;
+    height: 310px;
+    border-bottom: 10px solid #AAA;
+    margin-bottom: 20px;
+    font-size: 3rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.door-frame{
+    position: absolute;
+    height: 305px;
+    width: 210px;
+
+    border-left: var(--door-border);
+    border-top: var(--door-border);
+    border-right: var(--door-border);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.door {
+    position: absolute;
+    top: 5px;
+    height: 265px;
+    width: 170px;
+    background-color: chocolate;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.door .knob {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: brown;
+    align-self: flex-start;
+    margin-top: 60px;
+}
 
 </style>
