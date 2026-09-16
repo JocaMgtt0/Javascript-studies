@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <h1>Problema Monty Hall</h1>
+        <AppDoor number="1" hasGift="false" />
+    </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AppDoor from './components/AppDoor.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {AppDoor}
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
+
+body{
+    background: linear-gradient(to right, rgb(21,153, 87), rgb(21, 87, 153));
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#app h1{
+    border: 1px solid #000;
+    background-color: #0004;
+    padding: 20px;
+    margin-bottom: 60px
+}
+
+
+
 </style>
